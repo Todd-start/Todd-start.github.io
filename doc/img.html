@@ -1,16 +1,16 @@
 <html>
 	<head>
-	<script>
-         function Params(){
-    		var pattern = /(\w*)=([a-zA-Z0-9\u4e00-\u9fa5]+)/ig, params = {};//定义正则表达式和一个空对象
-    		decodeURIComponent(window.location.href, true).replace(pattern, function(a, b, c){ params[b] = c; });
-    		return params;
-	 }
-	var params = Params();
-	document.getElementById("img").src="./"+params["no"];
-	</script>
 	</head>
 	<body>
 	<p><img id="img" src=""/></p>
 	</body>
+	<script>
+            function Params(){
+                   var pattern = /(\w*)=([a-zA-Z0-9\u4e00-\u9fa5]+)/ig, params = {};//定义正则表达式和一个空对象
+                   decodeURIComponent(window.location.href, true).replace(pattern, function(a, b, c){ params[b] = c; });
+                   return params;
+            }
+           var params = Params();
+          document.getElementById("img").src="./"+params["no"];
+          </script>
 </html>
